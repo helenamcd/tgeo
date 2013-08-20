@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent" 
+    android:layout_weight="1"
+    android:background="@drawable/black_bg">
+
+    <!-- Menu Panel -->
+            
+       <!-- Sliding Panel -->
+
+    <RelativeLayout
+        android:id="@+id/menuPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/gray_bg"
+        android:gravity="right"
+        android:orientation="vertical" >
+        
+        
+        <ListView
+        android:id="@+id/list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/divider"
+        />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/shadow" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/slidingPanel"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/background_with_shadow"
+        android:gravity="left"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/black_bg" >
+
+            <View
+                android:id="@+id/header_vertical_divider_1"
+                android:layout_width="2dp"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/menuViewButton"
+                android:background="@drawable/black_bg" />
+
+            <ImageView
+                android:id="@+id/menuViewButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:clickable="true"
+                android:contentDescription="@string/description"
+                android:src="@drawable/icon_menu"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/dividerHeaderBottom"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#414141" />
+
+        <RelativeLayout
+            android:id="@+id/relative_area"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+		<com.usp.icmc.tgeo.AreaDesenho
+			android:id="@+id/area_desenho"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="#FFFFFF">
+			
+	 				    
+			
+		    
+		</com.usp.icmc.tgeo.AreaDesenho>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

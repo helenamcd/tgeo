@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TGeo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    
+     <string name="menu_title">MENU</string>
+     <string name="item_1">Novo</string>
+     <string name="item_2">Item 2</string>
+     
+     <string name="description">Description</string>
+     
+     
+     
+     
+     <string name="novo">Novo</string>
+     <string name="abrir">Abrir</string>
+     <string name="salvar">Salvar</string>
+     <string name="salvar_como">Salvar como</string>
+     <string name="mostrar_grid">Grid</string>
+     <string name="mostrar_eixo">Eixo cartesiano</string>
+
+</resources>
