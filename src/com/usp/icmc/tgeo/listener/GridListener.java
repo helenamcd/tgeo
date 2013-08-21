@@ -10,11 +10,17 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+/** Class of Grid
+* @author Helena Macedo Reis
+* @version 0.1
+*/
 public class GridListener extends View{
 	
 	Context context;
+	AreaDesenho areaDesenho;
 	
 	public GridListener(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -22,29 +28,15 @@ public class GridListener extends View{
 		
 	}
 
+	/**
+	* Method to set grid view to the working area
+	* @param GridListener gl
+	* @author Helena Macedo
+	* @version 0.0.1
+	*/
 	public void criarGrid(GridListener gl){
-		        
-		//LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        //View inflatedLayout = inflater.inflate ( R.layout.activity_layer_stack, null );
-        
-        /*
-		RelativeLayout relative = (RelativeLayout) findViewById(R.id.relative_area);
-        final View inflatedLayout = LayoutInflater.from(getContext()).inflate(R.layout.activity_layer_stack, relative);
-        
-		AreaDesenho areaDesenho = (AreaDesenho) inflatedLayout.findViewById(R.id.area_desenho);	
-		
-		System.out.println("areaDesenho: " + areaDesenho);*/
-		
-		
-		LayoutInflater inflater = LayoutInflater.from(context);
-	    inflater.inflate(R.layout.activity_layer_stack, null, true);
-
-	    AreaDesenho areaDesenho = (AreaDesenho)findViewById(R.id.area_desenho);
-		
-	    System.out.println("areaDesenho: " + areaDesenho);
-		
+		areaDesenho = AreaDesenho.getInstance();		
 		areaDesenho.setObject(gl);
-
 				
 	}
 	
@@ -55,7 +47,8 @@ public class GridListener extends View{
 
     	Paint paint = new Paint();
         paint.setColor(Color.BLACK);
-        canvas.drawCircle(20, 30, 50, paint);
+        //canvas.drawCircle(20, 30, 50, paint);
+        canvas.drawRect(20, 30, 50, 50, paint);
     }
 
 }

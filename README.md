@@ -1,4 +1,4 @@
-android-slide-out-menu
+TGeo
 ======================
 
-Android slide out menu similar to Facebook Android App
+Interactive Geometry for Tablets
