@@ -8,7 +8,10 @@ import java.util.ArrayList;
 import com.usp.icmc.tgeo.gui.AdapterListView;
 import com.usp.icmc.tgeo.gui.CollapseAnimation;
 import com.usp.icmc.tgeo.gui.ExpandAnimation;
+import com.usp.icmc.tgeo.gui.GridPickerDialog;
 import com.usp.icmc.tgeo.gui.ItemListView;
+import com.usp.icmc.tgeo.listener.CartesianCoordinateListener;
+import com.usp.icmc.tgeo.listener.CleanAllListener;
 import com.usp.icmc.tgeo.listener.GridListener;
 
 import android.os.Bundle;
@@ -50,14 +53,20 @@ public class Principal extends Activity implements OnItemClickListener{
 	
     private ListView listView;
     private AdapterListView adapterListView;
+    
+    private float width;
+    
+    private static Principal principal;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_layer_stack);
-
-		createMenu(0.40f);
+		setWidth(0.40f);
+		
+		createMenu(getWidth());
+		principal = this;
 		
 		
 	}	
@@ -113,7 +122,8 @@ public class Principal extends Activity implements OnItemClickListener{
 		menuViewButton.setOnClickListener(new OnClickListener() {
 		    public void onClick(View v) {
 		    	if(!isExpanded){
-		    		isExpanded = true;   		    				        		
+		    		isExpanded = true;
+		    		slidingPanel.setEnabled(true);
 		        	
 		    		//Expande
 		    		new ExpandAnimation(slidingPanel, panelWidth,
@@ -121,6 +131,7 @@ public class Principal extends Activity implements OnItemClickListener{
 		    	    Animation.RELATIVE_TO_SELF, width, 0, 0.0f, 0, 0.0f);		    			         	    
 		    	}else{
 		    		isExpanded = false;
+		    		slidingPanel.setEnabled(false);
 		    		
 		    		//Colapsa
 		    		new CollapseAnimation(slidingPanel,panelWidth,
@@ -131,6 +142,16 @@ public class Principal extends Activity implements OnItemClickListener{
 		    	}         	   
 		    }
 		});		
+	}
+	
+	public void collapseMenu(){
+		
+		isExpanded = false;
+		width = getWidth();
+		new CollapseAnimation(slidingPanel,panelWidth,
+        	    TranslateAnimation.RELATIVE_TO_SELF, width,
+        	    TranslateAnimation.RELATIVE_TO_SELF, 0.0f, 0, 0.0f, 0, 0.0f);
+		
 	}
 
 	/**
@@ -177,15 +198,31 @@ public class Principal extends Activity implements OnItemClickListener{
         //Demostração
         Toast.makeText(this, "Você Clicou em: " + item.getTexto(), Toast.LENGTH_LONG).show();
         
-        if (item.getTexto().equals("Grid")){
-        	//GridListener.criarGrid(this);
+        if (item.getTexto().equals("Grid")){        	
+        	GridPickerDialog gridDialog = new GridPickerDialog(this,null);
+        	gridDialog.show();
         	
-        	GridListener gl = new GridListener(this, null);
-        	gl.criarGrid(gl);
-        	
+        }if (item.getTexto().equals("Novo")){
+        	CleanAllListener.cleanScreen();
+        }if (item.getTexto().equals("Eixo cartesiano")){
+        	CartesianCoordinateListener.createCartesian();
         }
-        
     }
+    
+    
+    public void setWidth(float width){
+    	this.width = width;
+    }
+    
+    public float getWidth(){
+    	return this.width;
+    }
+    
+    public static Principal getInstance(){
+    	return principal;
+    }
+    
+    
 }
 
 

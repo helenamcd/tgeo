@@ -1,6 +1,8 @@
 package com.usp.icmc.tgeo;
 
 import com.usp.icmc.tgeo.listener.GridListener;
+import com.usp.icmc.tgeo.og.Ponto;
+import com.usp.icmc.tgeo.support.MyApplication;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -18,22 +20,32 @@ import android.widget.RelativeLayout;
 */
 public class AreaDesenho extends RelativeLayout{
 	
-	Context context;
+	private final static int NULO             = 0;
+	private final static int SGRETA           = 1;
+	private final static int RETA             = 2;
+	private final static int SMRETA           = 3;	
+	private final static int PONTO            = 4;
+	private final static int CIRCUNFERENCIA   = 5;
+	private final static int LIMPAR           = 6;
+	
+	private int mode;	
+	
+	Context context = MyApplication.getAppContext();
 	static AreaDesenho areaDesenho;
 	
 	@SuppressLint("NewApi")
 	public AreaDesenho(Context context, AttributeSet attrs, int defStyle) {
-
 		super(context, attrs, defStyle);
-		this.context = context;
+		
+		//Cor da area de desenho
 		this.setBackgroundColor(Color.WHITE);
 		
 	}
 
 	public AreaDesenho(Context context, AttributeSet attrs) {
-
 		this(context, null, 0);
-		this.context = context;
+		
+		//Cor da area de desenho
 		this.setBackgroundColor(Color.WHITE);
 
 
@@ -43,7 +55,8 @@ public class AreaDesenho extends RelativeLayout{
 	public AreaDesenho(Context context) {
 
 		this(context, null);
-		this.context = context;
+		
+		//Cor da area de desenho
 		this.setBackgroundColor(Color.WHITE);
 
 
@@ -59,19 +72,38 @@ public class AreaDesenho extends RelativeLayout{
 		this.addView(view);
 	}
 	
+	/**
+	* Method to remove an element
+	* @param View view
+	* @author Helena Macedo
+	* @version 0.0.1
+	*/	
+	public void removeObject(View view){
+		this.removeView(view);
+	}
+	
 	@Override
     public boolean onTouchEvent(MotionEvent event) {
 			
         Log.d("bThere", "X: " + (int)event.getX() + " Y: " + (int)event.getY());
         
+        int x = (int)event.getX();
+        int y = (int)event.getY();
+        
         
 		switch (event.getAction() & MotionEvent.ACTION_MASK) {		
 		
 			case MotionEvent.ACTION_DOWN:
+				if(event.getPointerCount() == 1){
+					mode = PONTO;
+				}
 				break;
 			case MotionEvent.ACTION_MOVE:
 				break;
 			case MotionEvent.ACTION_UP:	
+				if (mode == PONTO){
+					Ponto.createPoint(x, y);
+				}
 				break;
 			case MotionEvent.ACTION_POINTER_UP:
 				break;
@@ -98,7 +130,13 @@ public class AreaDesenho extends RelativeLayout{
 		areaDesenho = this;		
 		
 	}
-	
+
+	/**
+	* Method get the currenct instance
+	* @return AreaDesenho
+	* @author Helena Macedo
+	* @version 0.0.1
+	*/
 	public static AreaDesenho getInstance(){
 		return areaDesenho;
 	}
