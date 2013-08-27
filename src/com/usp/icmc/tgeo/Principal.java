@@ -103,13 +103,13 @@ public class Principal extends Activity implements OnItemClickListener{
 		menuPanelParameters.width = panelWidth;
 		menuPanel.setLayoutParams(menuPanelParameters);
 		
-		//O panel que fará o sliding
+		//O panel que far‚Ä° o sliding
 		slidingPanel = (LinearLayout) findViewById(R.id.slidingPanel);
 		slidingPanelParameters = (FrameLayout.LayoutParams) slidingPanel.getLayoutParams();
 		slidingPanelParameters.width = metrics.widthPixels;
 		slidingPanel.setLayoutParams(slidingPanelParameters);
 				
-		//Lista que conterá os elementos do menu
+		//Lista que conter‚Ä° os elementos do menu
         listView = (ListView) findViewById(R.id.list);
         listView.setOnItemClickListener(this);
  
@@ -117,7 +117,7 @@ public class Principal extends Activity implements OnItemClickListener{
         createListView();
 	
 
-		//Botão com a ação de sliding	
+		//Bot‚Äπo com a aÔøΩ‚Äπo de sliding	
         ImageView menuViewButton = (ImageView) findViewById(R.id.menuViewButton);
 		menuViewButton.setOnClickListener(new OnClickListener() {
 		    public void onClick(View v) {
@@ -186,7 +186,7 @@ public class Principal extends Activity implements OnItemClickListener{
         //Define o Adapter
         listView.setAdapter(adapterListView);
         
-        //Cor quando a lista é selecionada para ralagem.
+        //Cor quando a lista ≈Ω selecionada para ralagem.
         listView.setCacheColorHint(Color.TRANSPARENT);
     }
  
@@ -195,8 +195,8 @@ public class Principal extends Activity implements OnItemClickListener{
         //Pega o item que foi selecionado.
         ItemListView item = adapterListView.getItem(arg2);
         
-        //Demostração
-        Toast.makeText(this, "Você Clicou em: " + item.getTexto(), Toast.LENGTH_LONG).show();
+        //DemostraÔøΩ‚Äπo
+        Toast.makeText(this, "Voc√™ Clicou em: " + item.getTexto(), Toast.LENGTH_LONG).show();
         
         if (item.getTexto().equals("Grid")){        	
         	GridPickerDialog gridDialog = new GridPickerDialog(this,null);
