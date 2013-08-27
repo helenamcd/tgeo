@@ -23,14 +23,13 @@ public class PontoMedio extends Ponto{
 	
 	public PontoMedio(Ponto point1, Ponto point2) {
 		super(MyApplication.getAppContext(), null, (point1.getPointX()+point2.getPointX())/2, (point1.getPointY()+point2.getPointY())/2);
-		this.setColor(Color.GREEN);
 		this.point1 = point1;
 		this.point2 = point2;
 	}
 	
 	public static PontoMedio createMidPoint(Ponto ponto1, Ponto ponto2){
 		PontoMedio ponto = new PontoMedio(ponto1, ponto2);
-		
+		ponto.setColor(Color.GREEN);
 		Ponto.areaDesenho = AreaDesenho.getInstance();	
 		Ponto.areaDesenho.removeObject(ponto);
 		Ponto.areaDesenho.setObject(ponto);
