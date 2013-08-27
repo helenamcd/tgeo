@@ -8,9 +8,11 @@ import android.app.Dialog;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.view.View;
+import android.view.Window;
 
 
 public class GridPickerDialog extends Dialog implements View.OnClickListener
@@ -36,9 +38,8 @@ public class GridPickerDialog extends Dialog implements View.OnClickListener
 	{
 		super(context);
 				
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.grid_pickerdialog_layout);
-		
-		setTitle("Teste");
 		
 		anterior = (TextView) findViewById(R.id.anterior);
 		anterior.setText(String.valueOf(mMinValue));
@@ -69,7 +70,7 @@ public class GridPickerDialog extends Dialog implements View.OnClickListener
 	@Override
 	public void onClick(View v) {
 		int id = v.getId();
-		
+				
 	    switch (id) {
 		    case R.id.btn_anterior:
 		    	

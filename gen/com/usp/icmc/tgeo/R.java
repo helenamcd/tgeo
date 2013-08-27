@@ -27,30 +27,39 @@ public final class R {
         public static final int icon_novo_1=0x7f02000d;
         public static final int icon_salvar=0x7f02000e;
         public static final int icon_salvar_como=0x7f02000f;
-        public static final int shadow=0x7f020010;
-        public static final int test_border=0x7f020011;
+        public static final int linha_cinza=0x7f020010;
+        public static final int linha_verde=0x7f020011;
+        public static final int seta_baixo=0x7f020012;
+        public static final int seta_cima=0x7f020013;
+        public static final int seta_esquerda=0x7f020014;
+        public static final int shadow=0x7f020015;
+        public static final int test_border=0x7f020016;
     }
     public static final class id {
-        public static final int anterior=0x7f07000c;
+        public static final int anterior=0x7f07000f;
         public static final int area_desenho=0x7f070009;
-        public static final int atual=0x7f07000a;
-        public static final int btn_anterior=0x7f07000e;
-        public static final int btn_cancelar=0x7f07000f;
-        public static final int btn_ok=0x7f070010;
-        public static final int btn_proximo=0x7f07000d;
+        public static final int atual=0x7f07000d;
+        public static final int btn_anterior=0x7f070010;
+        public static final int btn_cancelar=0x7f070014;
+        public static final int btn_ok=0x7f070013;
+        public static final int btn_proximo=0x7f070012;
         public static final int dividerHeaderBottom=0x7f070007;
         public static final int header=0x7f070004;
         public static final int header_vertical_divider_1=0x7f070005;
         public static final int imageView1=0x7f070002;
-        public static final int imagemview=0x7f070011;
+        public static final int imageView2=0x7f07000e;
+        public static final int imageView3=0x7f070011;
+        public static final int imageView4=0x7f07000b;
+        public static final int imagemview=0x7f070015;
         public static final int list=0x7f070001;
         public static final int menuPanel=0x7f070000;
         public static final int menuViewButton=0x7f070006;
-        public static final int menu_settings=0x7f070013;
-        public static final int proximo=0x7f07000b;
+        public static final int menu_settings=0x7f070017;
+        public static final int proximo=0x7f07000c;
         public static final int relative_area=0x7f070008;
         public static final int slidingPanel=0x7f070003;
-        public static final int text=0x7f070012;
+        public static final int text=0x7f070016;
+        public static final int textView1=0x7f07000a;
     }
     public static final class layout {
         public static final int activity_layer_stack=0x7f030000;

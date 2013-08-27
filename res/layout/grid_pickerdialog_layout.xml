@@ -5,76 +5,134 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:background="#282828"
+        android:minHeight="500dp"
+        android:minWidth="300dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Configure o tamanho do seu Grid"
+            android:textColor="#19c3f2"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textView1"
+            android:layout_marginTop="18dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/linha_verde" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/proximo"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/linha_verde" />
 
         <TextView
             android:id="@+id/atual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/proximo"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="100dp"
+            android:layout_centerVertical="true"
             android:text="Large Text"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#575757"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/atual"
+            android:layout_alignLeft="@+id/imageView1"
+            android:layout_marginBottom="21dp"
+            android:src="@drawable/linha_verde" />
 
         <TextView
             android:id="@+id/proximo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/imageView2"
             android:layout_alignLeft="@+id/anterior"
-            android:layout_below="@+id/atual"
-            android:layout_marginTop="16dp"
             android:text="Large Text"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/anterior"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/proximo"
+            android:layout_above="@+id/imageView1"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp"
             android:text="Large Text"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <Button
-            android:id="@+id/btn_proximo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/btn_anterior"
-            android:layout_below="@+id/anterior"
-            android:layout_marginTop="32dp"
-            android:text="Button" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#575757"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btn_anterior"
-            android:layout_width="wrap_content"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_above="@+id/anterior"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="36dp"
-            android:text="Button" />
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/seta_cima" />
 
-        <TextView
-            android:id="@+id/btn_cancelar"
+        <ImageView
+            android:id="@+id/imageView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/btn_ok"
-            android:layout_alignBottom="@+id/btn_ok"
-            android:layout_alignLeft="@+id/btn_proximo"
-            android:layout_marginLeft="38dp"
-            android:text="Cancelar"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/btn_proximo"
+            android:layout_marginTop="39dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/linha_cinza" />
 
-        <TextView
+        <Button
             android:id="@+id/btn_ok"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_proximo"
-            android:layout_marginTop="50dp"
-            android:layout_toLeftOf="@+id/anterior"
+            android:layout_height="50dp"
+            android:layout_alignLeft="@+id/textView1"
+            android:layout_below="@+id/imageView3"
+            android:layout_toLeftOf="@+id/btn_proximo"
+            android:background="@android:color/transparent"
             android:text="OK"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_cancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignRight="@+id/textView1"
+            android:layout_below="@+id/imageView3"
+            android:layout_toRightOf="@+id/btn_proximo"
+            android:background="@android:color/transparent"
+            android:text="Cancelar"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_proximo"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/atual"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="19dp"
+            android:background="@drawable/seta_baixo" />
 
     </RelativeLayout>
 
