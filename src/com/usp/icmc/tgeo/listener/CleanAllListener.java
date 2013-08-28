@@ -18,7 +18,7 @@ public class CleanAllListener {
 	
 	public static void cleanScreen(){		
 		areaDesenho = AreaDesenho.getInstance();	
-		areaDesenho.removeAllViews();
+		areaDesenho.limparTela();
 		
 		Principal principal = Principal.getInstance();
 		principal.collapseMenu();
